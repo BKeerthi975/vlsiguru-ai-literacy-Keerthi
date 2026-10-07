@@ -277,6 +277,14 @@ To avoid synthesis-simulation mismatches and race conditions in Verilog, follow 
 | Same question | Gemini | Listed using blocking assignments "inside `assign` statements" as a guideline | `assign` uses blocking assignments | Cummings, SNUG 2000; `assign` is a continuous assignment | Wrong or imprecise; not found in the guidelines I checked | Check each item an AI attributes to a named source |
 | Same question | Gemini | Said a blocking assignment in a clocked block "synthesizes into a single wire" (then "or a single flip-flop") | Blocking assignment in a clocked block becomes a wire | Cummings, SNUG 2000 | Imprecise and self-contradictory | Hardware claims need a source or a test |
 
+**Screenshots (unedited apart from cropping):**
+
+![ChatGPT answer, part 1](evidence/q4-chatgpt-a.png)
+![ChatGPT answer, part 2](evidence/q4-chatgpt-b.png)
+![Gemini answer, part 1](evidence/q4-gemini-a.png)
+![Gemini answer, part 2](evidence/q4-gemini-b.png)
+![Gemini answer, part 3](evidence/q4-gemini-c.png)
+
 Reference: Clifford Cummings, "Nonblocking Assignments in Verilog Synthesis, Coding Styles That Kill!" (SNUG San Jose 2000): https://rfsoc.mit.edu/6S965/_static/F24/lectures/CummingsSNUG2000SJ_NBA.pdf
 
 ### V - Verification
@@ -321,6 +329,12 @@ This experiment showed me that an AI response can sound convincing because it ca
 - AI answer: Gemini (screenshot saved in `week-01/evidence/`)
 - Search results: Source 1 (seoClarity): https://www.seoclarity.net/resources/knowledgebase/use-301-redirect-vs-302-redirect-15683/ ; Source 2 (BigRock): https://www.bigrock.in/blog/products/websites-products/301-and-302-redirects-understanding-their-differences-and-when-to-use-them ; Source 3 (Tangence Solutions): https://www.tangence.in/blog/301-vs-302-redirect/
 - Authoritative reference: RFC 9110, sections 15.4.2 and 15.4.3: https://www.rfc-editor.org/rfc/rfc9110.html
+
+- AI answer: Gemini (screenshots below)
+
+![Gemini 301 vs 302 answer, part 1](evidence/q5-gemini-a.png)
+![Gemini 301 vs 302 answer, part 2](evidence/q5-gemini-b.png)
+![Gemini 301 vs 302 answer, part 3](evidence/q5-gemini-c.png)
 
 ### V - Verification
 
