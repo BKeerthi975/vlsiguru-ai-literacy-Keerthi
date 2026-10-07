@@ -267,12 +267,12 @@ To avoid synthesis-simulation mismatches and race conditions in Verilog, follow 
 
 ### E - Evidence
 
-| Model | Response summary | Claim checked | Evidence/source | Result |
-|---|---|---|---|---|
-| ChatGPT | `=` updates immediately; `<=` evaluates the right side now and updates later in the same time step. `=` for combinational logic, `<=` for clocked/sequential logic, with two examples. | `<=` for sequential logic, `=` for combinational logic; `<=` updates later in the time step | Cummings, SNUG 2000, section 5.0 guidelines and scheduling sections | Correct, but incomplete (no mention of race conditions or the rule against mixing the two styles) |
-| Gemini | Same core idea, plus a comparison table, scheduler regions (Active vs NBA), a shift-register example, and a list of six "Cummings guidelines". | `=` for combinational and `<=` for sequential; do not mix both in one block; one variable should not be assigned from multiple always blocks | Cummings, SNUG 2000, section 5.0 guidelines | Correct |
-| Gemini | Said blocking assignments (`=`) are used "inside `assign` statements". | `assign` statements use blocking assignments | Cummings, SNUG 2000 guidelines; Verilog reference on continuous assignments | Wrong or imprecise: `assign` is a continuous assignment, not a procedural blocking assignment. I could not find this item in Cummings' guidelines. |
-| Gemini | Said a blocking assignment in a clocked block "synthesizes into a single wire". | Blocking assignments in a clocked block turn into a wire | Cummings, SNUG 2000 (signals assigned in an edge-triggered block are registers) | Imprecise: it later says "or a single flip-flop", so the statement is confusing and partly contradicts itself |
+| Prompt | Model | Response summary | Verified claim | Evidence | Result | Lesson |
+|---|---|---|---|---|---|---|
+| Same question (above) | ChatGPT | `=` updates immediately, `<=` updates later in the time step; `=` for combinational, `<=` for clocked logic; two short examples | `<=` for sequential logic, `=` for combinational | Cummings, SNUG 2000 | Correct but incomplete (no race conditions, no rule against mixing styles) | A short answer can be correct and still leave out important rules |
+| Same question | Gemini | Same core idea, plus a table, scheduler regions, a shift-register example, and six "Cummings guidelines" | `=` combinational, `<=` sequential; do not mix in one block; one variable per always block | Cummings, SNUG 2000 | Correct | Detail is not the same as accuracy |
+| Same question | Gemini | Listed using blocking assignments "inside `assign` statements" as a guideline | `assign` uses blocking assignments | Cummings, SNUG 2000; `assign` is a continuous assignment | Wrong or imprecise; not found in the guidelines I checked | Check each item an AI attributes to a named source |
+| Same question | Gemini | Said a blocking assignment in a clocked block "synthesizes into a single wire" (then "or a single flip-flop") | Blocking assignment in a clocked block becomes a wire | Cummings, SNUG 2000 | Imprecise and self-contradictory | Hardware claims need a source or a test |
 
 Reference: Clifford Cummings, "Nonblocking Assignments in Verilog Synthesis, Coding Styles That Kill!" (SNUG San Jose 2000): https://rfsoc.mit.edu/6S965/_static/F24/lectures/CummingsSNUG2000SJ_NBA.pdf
 
@@ -283,6 +283,8 @@ I compared the important claims from both AI responses with the Cummings paper. 
 ### R - Reflection
 
 This experiment showed me that an AI response can sound convincing because it can produce clear and technically structured language even when a claim has not been verified. Gemini's answer looked more complete and professional than ChatGPT's, yet it contained a wrong or imprecise claim and a confusing one, hidden among many correct statements. Therefore, confidence, detail and fluency are not enough to establish that an AI-generated technical answer is correct. I should check important technical claims against reliable sources before accepting them, especially when an answer attributes its points to a named source.
+
+> Note: I chose this question because it has a clear answer in a published paper that I could check. I know it uses hardware-description terminology, but the concept (when an assignment takes effect) is a general programming-semantics question.
 
 ## Q5 - AI Assistant vs Search vs Authoritative Reference
 
@@ -465,11 +467,11 @@ I chose situations where a wrong AI output can cause real harm and where I can n
 
 | # | System / Feature | AI/ML involved? | Task type | Public evidence / source | Conclusion |
 |---|---|---|---|---|---|
-| 1 | Google Maps - ETA and traffic prediction | Yes | Prediction | [DeepMind: Traffic prediction with advanced Graph Neural Networks](https://deepmind.google/discover/blog/traffic-prediction-with-advanced-graph-neural-networks/) | AI/ML is involved. Google and DeepMind describe using graph neural networks to improve ETA predictions. |
-| 2 | Gmail - spam filtering | Yes | Classification | [Google Cloud Blog: Ridding Gmail of 100 million more spam messages with TensorFlow][(https://cloud.google.com/blog/products/g-suite/ridding-gmail-of-100-million-more-spam-messages-with-tensorflow)](https://workspace.google.com/blog/product-announcements/ridding-gmail-of-100-million-more-spam-messages-with-tensorflow) | AI/ML is involved. Google states that Gmail uses machine learning to detect spam. |
-| 3 | YouTube - video recommendations | Yes | Recommendation (ranking / prediction) | [Covington et al., "Deep Neural Networks for YouTube Recommendations" (2016)](https://research.google/pubs/deep-neural-networks-for-youtube-recommendations/) and [YouTube: On YouTube's recommendation system](https://blog.youtube/inside-youtube/on-youtubes-recommendation-system/) | AI/ML is involved. The paper describes neural networks for candidate generation and ranking. The current production system may differ from the 2016 paper. |
-| 4 | Gmail - Smart Compose | Yes | Generation (next-word prediction) | [Google Research Blog: Smart Compose - Using Neural Networks to Help Write Emails (2018)](https://research.google/blog/smart-compose-using-neural-networks-to-help-write-emails/) | AI/ML is involved. Google describes neural language models that predict the next words as you type. |
-| 5 | Microwave - weight-based auto-defrost | Probably not | Deterministic calculation (my assumption) | Not enough public evidence to conclude. I could not find a reliable source describing the internal logic of a specific microwave. | Likely simple rules or lookup tables (weight in, time out), but I cannot verify this. |
+| 1 | Google Maps - ETA and traffic prediction | Yes | Prediction | [DeepMind: Traffic prediction with advanced Graph Neural Networks (2020)](https://deepmind.google/discover/blog/traffic-prediction-with-advanced-graph-neural-networks/) | AI/ML is involved. DeepMind and Google Maps describe a Graph Neural Network that predicts travel time for road segments. |
+| 2 | Gmail - spam filtering | Yes | Classification | [Google Workspace Blog: Ridding Gmail of 100 million more spam messages with TensorFlow](https://workspace.google.com/blog/product-announcements/ridding-gmail-of-100-million-more-spam-messages-with-tensorflow) | AI/ML is involved. Google says it uses TensorFlow-based ML models to block additional spam. |
+| 3 | YouTube - video recommendations | Yes | Recommendation (ranking / prediction) | [Covington et al., "Deep Neural Networks for YouTube Recommendations" (RecSys 2016)](https://research.google/pubs/pub45530) and [YouTube blog: On YouTube's recommendation system](https://blog.youtube/inside-youtube/on-youtubes-recommendation-system/) | AI/ML is involved. The paper describes a deep candidate-generation model and a deep ranking model. The 2016 paper may not match today's production system. |
+| 4 | Gmail - Smart Compose | Yes | Generation (next-word prediction) | [Google Research Blog: Smart Compose (May 2018)](https://www.research.google/blog/smart-compose-using-neural-networks-to-help-write-emails/) and [KDD 2019 paper: Gmail Smart Compose](https://research.google/pubs/pub48231/) | AI/ML is involved. Google describes a neural language model that suggests sentence completions as you type. |
+| 5 | Microwave - weight-based auto-defrost | Probably not | Deterministic calculation (my assumption) | Not enough public evidence to conclude. I could not find a reliable source describing the internal logic of a specific microwave. | Likely simple rules or a lookup table (weight in, time out), but I cannot verify this. |
 
 ### Rule-based comparison (YouTube recommendations)
 
@@ -480,34 +482,35 @@ IF user watches cricket videos  -> show the most-viewed cricket videos this week
 IF user watches cooking videos  -> show the most-viewed cooking videos this week
 ```
 
-This works for a basic "more of the same" feature. It breaks down when:
+This imitates a basic "more of the same" feature. YouTube's own blog says its early system ranked videos by popularity, and that today's system does not work from a fixed recipe book of rules. Hand-written rules break down when:
 
 - tastes change over time,
-- a viewer watches many topics,
-- there are millions of users and videos, so hand-written rules cannot capture subtle patterns such as "people who watched X also enjoyed Y".
+- a viewer watches many different topics,
+- there are billions of videos, so no developer can write rules for every pattern.
 
-The YouTube paper describes learning from signals such as watch history from large amounts of data. A rule-based system would only do what a developer explicitly wrote. So a simple rule-based approach can imitate a basic version of the behavior, but not personalization at scale.
+So a rule-based approach can copy a simple version of the behavior, but not personalization at scale.
 
 ### E - Evidence
 
-- DeepMind blog on Google Maps ETA prediction (link in table, row 1)
-- Google Cloud blog on Gmail spam filtering with TensorFlow (row 2)
-- Covington et al. (2016), YouTube recommendations paper, and the YouTube blog on its recommendation system (row 3)
-- Google Research blog on Smart Compose (row 4)
+- DeepMind blog on Google Maps ETA prediction (row 1)
+- Google Workspace blog on Gmail spam filtering with TensorFlow (row 2)
+- Covington et al. (2016) YouTube paper, and YouTube's blog on its recommendation system (row 3)
+- Google Research blog and KDD 2019 paper on Smart Compose (row 4)
 - Row 5: no reliable public source found
 
 ### V - Verification
 
--- I opened all six links on 7 October 2026 and checked that each page supports the claim in the table. Google Maps: Graph Neural Network for ETAs. Gmail: TensorFlow ML models for spam. YouTube paper: deep candidate generation and ranking models. Smart Compose: neural language model for suggestions.
-- I preferred official company engineering/research pages over news articles or marketing language.
+- I opened all six links on 7 October 2026 and checked that each page supports the claim in the table. Google Maps: Graph Neural Network for ETAs. Gmail: TensorFlow ML models for spam. YouTube paper: deep candidate generation and ranking models. Smart Compose: neural language model for suggestions.
+- Three links suggested by an AI tool were wrong or outdated (Gmail spam, YouTube paper, Smart Compose blog). I searched for each source and replaced it with the working URL.
+- I preferred official company engineering and research pages over news articles.
 - I did not accept that a feature is AI just because it feels "smart".
-- Public posts can be outdated or simplified. Companies do not publish full production details, so I can confirm that ML is used, but not exactly how.
-- For the microwave, I could not find evidence, so I wrote "Not enough public evidence to conclude" instead of guessing.
-- AI assistants (ChatGPT, Gemini, Claude) were used to suggest examples. I corrected claims that had no verifiable source.
+- Company posts can be outdated or simplified. They confirm that ML is used, but not exactly how.
+- For the microwave I found no evidence, so I wrote "Not enough public evidence to conclude" instead of guessing.
+- AI assistants suggested the examples. I removed claims I could not source (for example, citations to "user manuals").
 
 ### R - Reflection
 
-Many features are called "smart" or "AI-powered" even when ordinary rules would do the job. The clear evidence for AI came from the products whose companies published papers or engineering posts. The microwave showed me that a feature can look intelligent while I still lack proof of how it works inside. What could still go wrong: an older source may not describe the current system, and I may wrongly assume "rule-based" or "AI" without evidence. Next time I will check the date of each source and separate "the company says ML is used" from "I know how it works".
+Many features are called "smart" or "AI-powered" even when ordinary rules would do the job. The clear evidence for AI came from products whose companies published papers or engineering posts. The microwave showed me that a feature can look intelligent while I still have no proof of how it works. A corrected link also taught me that AI tools can give plausible but wrong URLs. What could still go wrong: an older source may not describe the current system, and I may wrongly label something "AI" or "rule-based" without evidence. Next time I will check each source's date and separate "the company says ML is used" from "I know how it works".
 
 ## Q9 - Prediction, Classification, and Generation
 
