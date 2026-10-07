@@ -49,9 +49,12 @@ AI is the broad field, ML is the approach of learning from data, and deep learni
 
 ### E-Evidence 
 
-1. IBM, "AI vs. machine learning vs. deep learning vs. neural networks": https://www.ibm.com/think/topics/ai-vs-machine-learning-vs-deep-learning-vs-neural-networks - Supports: AI > ML > DL hierarchy, and DL as ML using multi-layer neural networks.
-2. Google Cloud, "Generative AI use cases and definition": https://cloud.google.com/use-cases/generative-ai - Supports: GenAI creates new content (text, images, audio, video) by learning patterns from existing data.
-3. Anthropic, "Building effective agents": https://www.anthropic.com/engineering/building-effective-agents - Supports: an agent is a system where an LLM directs its own process and tool use, which is different from a fixed workflow or a single model call.
+1. IBM Research, "What is generative AI?": https://research.ibm.com/blog/what-is-generative-AI
+- Supports: generative AI refers to deep-learning models that generate content (text, images, code) based on the data they were trained on.
+2. Google Cloud, "Generative AI use cases and definition": https://cloud.google.com/use-cases/generative-ai
+- Supports: GenAI creates new content (text, images, audio, video) by learning patterns from existing data.
+3. Anthropic, "Building effective agents": https://www.anthropic.com/engineering/building-effective-agents
+- Supports: an agent is a system where an LLM directs its own process and tool use, which is different from a fixed workflow or a single model call.
 
 ### V - Verification
 
@@ -92,8 +95,8 @@ In a traditional program, a human works out the problem and writes every rule in
 
 ### E - Evidence
 
-1. Google, *Machine Learning Crash Course*, which includes a lesson on how ML differs from traditional programming: https://developers.google.com/machine-learning/crash-course/ml-intro
-   - Supports: traditional programming uses rules written by a human, while ML learns patterns from data.
+1. 1. Google, *Introduction to Machine Learning*: https://developers.google.com/machine-learning/intro-to-ml
+   - Supports: a short course on how solving problems with ML differs from traditional approaches.
 2. Google Cloud, "Generative AI use cases and definition": https://cloud.google.com/use-cases/generative-ai
    - Supports: generative AI creates new content (text, images, audio, video) by learning patterns from existing data.
 3. IBM, "AI vs. machine learning vs. deep learning vs. neural networks": https://www.ibm.com/think/topics/ai-vs-machine-learning-vs-deep-learning-vs-neural-networks
@@ -154,8 +157,8 @@ An LLM is mainly trained to learn patterns in language and predict likely next t
 
 ### E - Evidence
 
-1. Hugging Face, Agents Course, "What are LLMs?": https://huggingface.co/learn/agents-course/unit1/what-are-llms
-   - Supports: what tokens are, next-token prediction, and the autoregressive loop where the output of one step becomes the input of the next until the model predicts a stop token. It also has a section on how LLMs are trained.
+1. Hugging Face, LLM Course, "Deep dive into Text Generation Inference with LLMs": https://huggingface.co/learn/llm-course/chapter1/8
+   - Supports: the model generates one token at a time, calculates probabilities for the possible next tokens, and then selects one.
 2. labuladong, "How LLMs Predict the Next Token": https://labuladong.online/en/ai-coding/basics/llm-token-prediction/
    - Supports: the model predicts a probability for the next token given the text so far, picks one, appends it, and loops until it emits a "done" token. It also explains that the trained parameters stay fixed when you run your input through them (inference).
 
@@ -629,7 +632,7 @@ The same product can combine several task types, so the useful question is "what
 
 ### V - Verification
 
-- I checked the three resistance values (12, 10 and 8 AWG) against two AWG tables and they matched. (Add the date and what you opened: ____)
+- I checked the three resistance values (12, 10 and 8 AWG) against two AWG tables and they matched. (- On 7 October 2026 I opened the HyperPhysics (Georgia State University) AWG table and the Wikipedia "American wire gauge" page. Both give the resistance of copper wire at 20 C. I checked the rows for 12, 10 and 8 AWG, and the values matched: 12 AWG = 1.588, 10 AWG = 0.9989 and 8 AWG = 0.6282 ohm per 1000 ft._\)
 - I recalculated all voltage drops by hand and corrected small rounding differences from an AI draft.
 - I removed a source an AI suggested (NEC Table 8) because the values I used come from standard 20 C AWG tables, not that table.
 - I removed a claim about what NASA standards dictate because I could not confirm it.
