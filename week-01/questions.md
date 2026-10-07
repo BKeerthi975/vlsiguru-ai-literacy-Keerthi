@@ -279,11 +279,11 @@ To avoid synthesis-simulation mismatches and race conditions in Verilog, follow 
 
 **Screenshots (unedited apart from cropping):**
 
-![ChatGPT answer, part 1](evidence/q4-chatgpt-a.png)
-![ChatGPT answer, part 2](evidence/q4-chatgpt-b.png)
-![Gemini answer, part 1](evidence/q4-gemini-a.png)
-![Gemini answer, part 2](evidence/q4-gemini-b.png)
-![Gemini answer, part 3](evidence/q4-gemini-c.png)
+![ChatGPT answer, part 1](evidence/q4-chatgpt-a.png.png)
+![ChatGPT answer, part 2](evidence/q4-chatgpt-b.png.png)
+![Gemini answer, part 1](evidence/q4-gemini-a.png.png)
+![Gemini answer, part 2](evidence/q4-gemini-b.png.png)
+![Gemini answer, part 3](evidence/q4-gemini-c.png.png)
 
 Reference: Clifford Cummings, "Nonblocking Assignments in Verilog Synthesis, Coding Styles That Kill!" (SNUG San Jose 2000): https://rfsoc.mit.edu/6S965/_static/F24/lectures/CummingsSNUG2000SJ_NBA.pdf
 
@@ -332,10 +332,9 @@ This experiment showed me that an AI response can sound convincing because it ca
 
 - AI answer: Gemini (screenshots below)
 
-![Gemini 301 vs 302 answer, part 1](evidence/q5-gemini-a.png)
-![Gemini 301 vs 302 answer, part 2](evidence/q5-gemini-b.png)
-![Gemini 301 vs 302 answer, part 3](evidence/q5-gemini-c.png)
-
+![Gemini 301 vs 302 answer, part 1](evidence/q5-gemini-a.png.png)
+![Gemini 301 vs 302 answer, part 2](evidence/q5-gemini-b.png.png)
+![Gemini 301 vs 302 answer, part 3](evidence/q5-gemini-c.png.png)
 ### V - Verification
 
 I asked the same question to Gemini, searched the web and read three results, then checked all of them against RFC 9110. The basic meaning (301 permanent, 302 temporary) was the same everywhere. What did not hold up was Gemini's "~90-99%" link equity number (not in the RFC, and the web sources disagree on it), its naming of 302 as "Temporary Redirect", and its missing POST-to-GET and 307/308 points. The web sources also contradicted each other about whether a 302 passes link value.
