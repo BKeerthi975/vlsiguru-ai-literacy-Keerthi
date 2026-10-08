@@ -2,31 +2,27 @@
 
 | Date | Question / claim | AI tool | Claim checked | Verification source / experiment | Result |
 |---|---|---|---|---|---|
-| Oct 5, 2026 | Q1/Q2 - source for the definition of generative AI | AI assistant | Google Cloud's generative AI page defines it | Opened the link | The link now redirects to a product page with no definition; replaced with IBM Research "What is generative AI?" |
-| Oct 5, 2026 | Q2 - source on ML vs traditional programming | AI assistant | Google's `crash-course/ml-intro` page | Searched for the page | Outdated address; replaced with `developers.google.com/machine-learning/intro-to-ml` |
-| Oct 5, 2026 | Q3 - source on next-token prediction | AI assistant | A blog post as the second source | Looked for a stronger source | Replaced with the Hugging Face LLM course, chapter 1 |
-| Oct 6, 2026 | Q4 - blocking vs non-blocking | ChatGPT | `=` for combinational, `<=` for sequential; `<=` updates later in the time step | Cummings, SNUG 2000 | Correct but incomplete (no race conditions, no rule against mixing styles) |
-| Oct 6, 2026 | Q4 - blocking vs non-blocking | Gemini | Six "Cummings guidelines" | Cummings, SNUG 2000, section 5.0 (eight guidelines) | Five of six match; the item about blocking assignments inside `assign` statements is not in the paper |
-| Oct 6, 2026 | Q4 - blocking vs non-blocking | Gemini | Clocked block with blocking assignments "synthesizes into a single wire" | Cummings, SNUG 2000, section 8.0, Example 5 | Partly wrong: the paper says a single register (flip-flop), not a wire |
-| Oct 7, 2026 | Q5 - HTTP 301 vs 302 | Gemini | 302 is named "Found (Temporary Redirect)" | RFC 9110, section 15.4.3 | Imprecise: 302 is "Found"; "Temporary Redirect" is 307 |
-| Oct 7, 2026 | Q5 - HTTP 301 vs 302 | Gemini | 301 passes about 90-99% link equity | RFC 9110 (silent on SEO); three web sources | Unsupported; web sources disagree |
-| Oct 7, 2026 | Q5 - HTTP 301 vs 302 | Web search results | Whether a 302 passes link value | Three SEO web pages | Sources contradict each other; unresolved |
-| Oct 7, 2026 | Q7 - Mata v. Avianca | AI assistant | Lawyers were sanctioned $5,000 for fake ChatGPT citations | LawNext article | Confirmed |
-| Oct 7, 2026 | Q8 - source links | AI assistant | Links for Gmail spam and YouTube paper | Searched for the pages and opened them | Two links were wrong; replaced with working URLs |
-| Oct 8, 2026 | Q8 - microwave and price-alert examples | ChatGPT / Gemini | "User manuals" and "Retail Tech Architecture Specs" as evidence | Searched for them | Could not find real, checkable sources; removed |
-| Oct 8, 2026 | Q8 - microwave auto-defrost internals | None | Is it rule-based? | No public source found | Not enough public evidence to conclude |
-| Oct 8, 2026 | Q8 - all six links | None | Each page supports the claim in my table | Opened every link | Confirmed |
-| Oct 8, 2026 | Q9 - source for next-token prediction | AI assistant | A paper titled "Unreasonable Effectiveness of Autoregressive Language Modeling" by Sutskever | Web search | Could not find it; removed |
-| Oct 8, 2026 | Q9 - classification vs prediction for churn | ChatGPT / Gemini | Is churn classification or prediction? | The output is a label ("cancel" or "stay") | Classified as classification, with a caveat |
-| Oct 8, 2026 | Q10 - wire resistance values | AI assistant | 12, 10 and 8 AWG copper resistance at 20 C | HyperPhysics AWG table; Wikipedia AWG | Confirmed (1.588, 0.9989, 0.6282 ohm per 1000 ft) |
-| Oct 8, 2026 | Q10 - NEC Table 8 as the source | AI assistant | Resistance values come from NEC Chapter 9 Table 8 | Compared with the standard 20 C AWG tables | Source not confirmed; replaced with HyperPhysics |
-| Oct 8, 2026 | Q10 - NASA handbook claim | AI assistant | "NASA standards dictate" independent verification | Could not confirm wording | Removed |
-| Oct 8, 2026 | Q10 - voltage drop numbers | AI assistant | 5.95%, 3.74%, 2.35% | Recalculated | Corrected to 5.96%, 3.75%, 2.36% (rounding) |
+| Oct 5, 2026 | Q1/Q2 - Generative AI definition | AI assistant | Google Cloud's generative AI page defines generative AI | IBM Research: https://research.ibm.com/blog/what-is-generative-AI | Original source was not suitable; replaced with IBM Research and verified the definition. |
+| Oct 5, 2026 | Q2 - ML vs traditional programming | AI assistant | Google's ML introduction page | Google for Developers: https://developers.google.com/machine-learning/intro-to-ml | Original URL was outdated; replaced it with the current Google ML page. |
+| Oct 5, 2026 | Q3 - Next-token prediction | AI assistant | LLMs predict the next token | Hugging Face LLM Course: https://huggingface.co/learn/llm-course/chapter1 | Verified the concept using the LLM course and removed the weaker source. |
+| Oct 6, 2026 | Q4 - Blocking vs non-blocking | ChatGPT | `=` is blocking and `<=` is non-blocking; non-blocking assignments update later in the simulation time step | Cummings SNUG paper: https://csg.csail.mit.edu/6.375/6_375_2009_www/papers/cummings-nonblocking-snug99.pdf | Core explanation was correct but incomplete because it did not mention race conditions and other coding guidelines. |
+| Oct 6, 2026 | Q4 - Cummings guidelines | Gemini | Gemini claimed six guidelines were from Cummings | Cummings SNUG paper: https://csg.csail.mit.edu/6.375/6_375_2009_www/papers/cummings-nonblocking-snug99.pdf | Five matched the paper; one claimed guideline was not found in the paper. |
+| Oct 6, 2026 | Q4 - Clocked blocking assignment | Gemini | Blocking assignment in a clocked block synthesizes into a single wire | Cummings SNUG paper, Example 5: https://csg.csail.mit.edu/6.375/6_375_2009_www/papers/cummings-nonblocking-snug99.pdf | Incorrect wording. The paper describes a single register/flip-flop, not a wire. |
+| Oct 7, 2026 | Q5 - HTTP 301 vs 302 | Gemini | 302 is "Found (Temporary Redirect)" | RFC 9110: https://www.rfc-editor.org/rfc/rfc9110.html | Corrected: 302 is "Found"; 307 is "Temporary Redirect." |
+| Oct 7, 2026 | Q5 - 301 link equity | Gemini | 301 passes about 90–99% link equity | RFC 9110: https://www.rfc-editor.org/rfc/rfc9110.html; additional SEO sources | Unsupported. RFC 9110 does not give an SEO percentage and web sources disagreed. |
+| Oct 7, 2026 | Q7 - Mata v. Avianca | AI assistant | Lawyers were sanctioned for fake ChatGPT citations | U.S. District Court decision: https://www.nysd.uscourts.gov/sites/default/files/2023-08/Mata%20v.%20Avianca%20-%20Sanctions%20Decision.pdf | Confirmed. |
+| Oct 7, 2026 | Q8 - Gmail spam source | AI assistant | Gmail spam information and source link | Google Gmail Help: https://support.google.com/mail/answer/1366858 | Verified the official Gmail Help page. |
+| Oct 8, 2026 | Q8 - Microwave and price-alert examples | ChatGPT / Gemini | Claimed manuals/specifications supported the examples | Web search for the claimed documents | Could not find reliable, checkable sources; unsupported sources were removed. |
+| Oct 8, 2026 | Q8 - Microwave auto-defrost | None | Whether the internal operation is rule-based | Web search | No reliable public source found; conclusion left unresolved. |
+| Oct 8, 2026 | Q9 - Churn classification | ChatGPT / Gemini | Whether "cancel/stay" is classification | Google for Developers: https://developers.google.com/machine-learning/crash-course/classification | Confirmed as binary classification because the output is a category such as "cancel" or "stay." It can also broadly be called churn prediction. |
+| Oct 8, 2026 | Q9 - Next-token prediction source | AI assistant | Claimed paper titled "Unreasonable Effectiveness of Autoregressive Language Modeling" by Sutskever | Web search | Could not find a reliable source for the claimed paper; citation was removed. |
+| Oct 8, 2026 | Q10 - AWG resistance values | AI assistant | 12, 10 and 8 AWG copper resistance at 20°C | HyperPhysics: https://hyperphysics.gsu.edu/hbase/Tables/wirega.html | Confirmed: 12 AWG = 1.588 Ω/1000 ft, 10 AWG = 0.9989 Ω/1000 ft, 8 AWG = 0.6282 Ω/1000 ft. |
+| Oct 8, 2026 | Q10 - NEC Table 8 source | AI assistant | Claimed values came from NEC Chapter 9 Table 8 | Compared the claim with the verified AWG table | Source could not be confirmed; HyperPhysics was used instead. |
+| Oct 8, 2026 | Q10 - NASA standards claim | AI assistant | "NASA standards dictate" the calculation | Web search | Could not verify the wording; claim was removed. |
+| Oct 8, 2026 | Q10 - Voltage-drop calculation | AI assistant | 5.95%, 3.74%, 2.35% | Recalculated using verified resistance values | Corrected to 5.96%, 3.75%, and 2.36% due to rounding. |
 
 ## Notes
 
-- **What did the AI get right?** The core concepts: blocking vs non-blocking, 301 vs 302 meanings, the wire-resistance values, and the overall structure of my answers.
-- **What did it get wrong or leave unsupported?** Exact links, citations that do not exist, a guideline attributed to a named paper, and precise-looking numbers with no source.
-- **What did I learn about verification?** Open every link yourself. A named source is not proof that the source says what the AI claims. Detailed, well-formatted answers can hide the errors.
-
-- **What did I learn about verification?** Open every link yourself. A named source is not proof that the source says what the AI claims. Detailed, well-formatted answers can hide the errors.
+- **What did the AI get right?** The core concepts, including blocking vs non-blocking assignments, HTTP 301 vs 302 meanings, AWG resistance values, and the overall structure of the answers.
+- **What did it get wrong or leave unsupported?** Some links were outdated or incorrect, some citations could not be found, one guideline was incorrectly attributed to a named paper, and some precise numerical claims did not have reliable sources.
+- **What did I learn about verification?** I learned that I should open every important link myself and check whether the source actually supports the claim. A detailed answer with a citation can still contain errors.
