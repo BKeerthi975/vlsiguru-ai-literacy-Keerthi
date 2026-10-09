@@ -2,7 +2,7 @@
 
 ### A - Answer
 
-**1. Definitions **
+**1. Definitions**
 
 - **Artificial Intelligence (AI):** The broad field of building computer systems that can do tasks that normally need human intelligence, like understanding information, recognizing patterns, making decisions, and solving problems.
 - **Machine Learning (ML):** A subset of AI where a system learns patterns from data and uses them to make predictions or decisions, instead of relying only on hand-written rules.
@@ -561,7 +561,7 @@ Caveats:
 - The model usually samples from a probability distribution rather than always taking the single most likely token.
 - It optimizes for plausible text, not verified truth. This is why fluent answers can be wrong.
 
-- ### E - Evidence
+  ### E - Evidence
 
 - Google Machine Learning Crash Course, Linear regression module (numeric outputs): https://developers.google.com/machine-learning/crash-course/linear-regression
 - Google Machine Learning Crash Course, Classification module (categories): https://developers.google.com/machine-learning/crash-course/classification
