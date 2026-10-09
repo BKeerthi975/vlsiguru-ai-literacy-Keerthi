@@ -648,7 +648,7 @@ The same product can combine several task types, so the useful question is "what
 
 ### V - Verification
 
-- On 7 October 2026 I opened the HyperPhysics (Georgia State University) AWG table and the Wikipedia "American wire gauge" page. Both give the resistance of copper wire at 20 °C. I checked the rows for 12, 10 and 8 AWG, and the values matched: 12 AWG = 1.588, 10 AWG = 0.9989 and 8 AWG = 0.6282 ohm per 1000 ft.
+- On 7 October 2026 I opened the HyperPhysics (Georgia State University) AWG table and the Wikipedia "American wire gauge" page. Both give copper resistance at 20 C. For 12, 10 and 8 AWG the values matched: 1.588, 0.9989 and 0.6282 ohm per 1000 ft.
 - I recalculated all voltage drops by hand and corrected small rounding differences from an AI draft.
 - I removed a source an AI suggested (NEC Table 8) because the values I used come from standard 20 C AWG tables, not that table.
 - I removed a claim about what NASA standards dictate because I could not confirm it.
