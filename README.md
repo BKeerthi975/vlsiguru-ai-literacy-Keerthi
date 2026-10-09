@@ -1,7 +1,7 @@
 # AI Literacy Layer Portfolio
 
-** Name:** B Keerthi
-** Track:** DV(Design Verification)
+Name:B Keerthi
+Track:DV(Design Verification)
 
 ## Purpose
 
