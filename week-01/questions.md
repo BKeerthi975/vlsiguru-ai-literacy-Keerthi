@@ -570,9 +570,9 @@ Caveats:
 
 ### V - Verification
 
--- I opened the Linear regression and Classification modules (7 October 2026) and read the introductions. Regression is used for predicting numeric values and classification for assigning categories, which matches my answers for A, B, D and F.
+- I opened the Linear regression and Classification modules (7 October 2026) and read the introductions. Regression is used for predicting numeric values and classification for assigning categories, which matches my answers for A, B, D and F.
 - I opened the Large language models module and the Smart Compose blog. Both describe language models learning to predict text, which supports my answer for H and the next-token explanation.
-- Two AI tools disagreed on question D (classification vs prediction). I resolved it by asking what the output is: a label, not a number. (Edit this to match what you actually decided.)
+- ChatGPT and Gemini labelled D (customer cancellation) differently: one said "prediction" and the other said "classification". I checked Google's Classification module. The output is a category (cancel / stay), so I classified D as binary classification. It is also commonly called "churn prediction", which is why both labels appear.
 - I removed a citation that an AI suggested because I could not find that paper. I treated it as unverified.
 - What I could not verify: exactly how production systems combine these task types.
 
