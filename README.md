@@ -1,7 +1,7 @@
 # AI Literacy Layer Portfolio
 
-**Name:** [Your full name]
-**Track:** [Design / DV / DFT / PD / Analog / Other]
+**Name:**B Keerthi
+**Track:** DV
 
 ## Purpose
 
