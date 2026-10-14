@@ -1,12 +1,32 @@
-# Sources: Week 02
 
-Only sources I actually opened are listed here. Each row says which claim the source supports.
-
----
+# Week 02 - Sources
 
 ## Mission 1: AI and ML Landscape
 
-| # | Source | Link | Claim it supports | Where I used it |
-|---|---|---|---|---|
-| 1 | Google, Introduction to Machine Learning | PASTE LINK HERE | ML learns patterns from data, and this differs from traditional programming where a human writes the rules | Mission 1: sections 2, 3, 4 (distinction 2) |
-| 2 | IBM, What is Machine Learning? | PASTE LINK HERE | ML is a subset of AI, and deep learning is a subset of ML | Mission 1: concept map, distinction 1 and 5 |
+### Source 1
+- Title: What is Machine Learning?
+- Publisher: Google for Developers
+- URL: https://developers.google.com/machine-learning/intro-to-ml/what-is-ml
+- Used for: ML fundamentals, learning from data, classification, and generative AI.
+
+### Source 2
+- Title: Artificial Intelligence vs Machine Learning
+- Publisher: Google Cloud
+- URL: https://cloud.google.com/learn/artificial-intelligence-vs-machine-learning
+- Used for: Understanding the relationship between AI and ML.
+
+### Source 3
+- Title: Machine Learning
+- Publisher: Google for Developers
+- URL: https://developers.google.com/machine-learning/
+- Used for: Additional introductory learning resources.
+
+### Source 4
+- Title: Introduction to ML Problem Framing
+- Publisher: Google for Developers
+- URL: https://developers.google.com/machine-learning/problem-framing
+- Used for: Understanding how to decide whether ML is suitable for a problem.
+
+## Verification Note
+
+These sources were consulted to support the introductory explanations. The VLSI/DV examples are illustrative and are not claims about a specific deployed product.
