@@ -1,72 +1,47 @@
+# Mission 2: Understand Data - What Does an ML System Learn From?
 
-# Mission 2: Understand Data — What Does an ML System Learn From?
+**Research question:** What does it mean to learn a pattern from data?
 
 ## 1. Introduction
 
-Machine Learning models learn patterns from data. The quality and type of data we provide can affect how well a model makes predictions.
+An ML model has no built-in knowledge of the problem. Everything it learns comes from the examples it is given, so the type, quality and representativeness of the data limit how good the model can become. In VLSI, one idea is to use historical measurements from earlier design runs to predict whether a new run will pass or fail timing.
 
-For example, in VLSI, we can use previous timing reports to train a model that predicts whether a new design run will pass or fail timing.
+All data in this file is **synthetic**, made up to illustrate the concepts. It is not from a real chip-design project. The same table is available as [`mission_02_dataset.csv`](mission_02_dataset.csv).
 
-## 2. Important Data Concepts
+## 2. Key Terms
 
-- **Dataset:** A collection of related data used for analysis or training.
-- **Sample:** One example in a dataset.
-- **Observation:** The recorded information about one sample. In a tabular dataset, it is usually one row.
-- **Feature:** An input value used by the model to make a prediction.
-- **Label:** The known answer associated with a sample in a labelled dataset.
-- **Target:** The outcome the model is expected to predict.
+| Term | Meaning | In the timing example |
+|---|---|---|
+| **Dataset** | The whole collection of examples used for analysis or training | The full table of design runs |
+| **Sample** | One example in the dataset | One design run |
+| **Observation** | The recorded information about one sample (one row in a table) | R1: 0.80 ns, 12.5 mW, Low complexity, PASS |
+| **Feature** | An input value the model uses to make a prediction | Delay, power, design type |
+| **Label** | The known correct answer attached to a sample in the data | PASS or FAIL for that run |
+| **Target** | The quantity the model is trained to predict | The timing result |
 
-For example, if we want to predict timing pass or fail, delay and power can be features, while the timing result is the target.
+**Label vs target.** They usually refer to the same column in supervised learning, but from different angles. The *label* is the known answer stored with each sample. The *target* is what the model is being asked to predict. In unlabelled data there is no label column, so there is no supervised target.
 
 ## 3. Types of Data
 
-### Structured Data
+**Structured vs unstructured**
+- *Structured data* fits a fixed table of rows and columns. Example: timing reports with delay, power and status columns.
+- *Unstructured data* has no fixed table shape. Examples: images (such as wafer or layout images), free-text bug reports, raw simulation logs. It usually needs extra processing before a model can use it.
 
-Structured data is organised in a fixed format, such as rows and columns in a table.
+**Numerical vs categorical features**
+- *Numerical features* are measurable numbers. Examples: delay (ns), power (mW), cell area.
+- *Categorical features* are groups or names. Examples: process corner, operating mode, design type.
+- Some categorical features have a natural order (called *ordinal*). "Low, Medium, High complexity" is ordinal, whereas process corner names are not.
 
-Example: Timing reports containing delay, power and timing status.
+## 4. Labelled vs Unlabelled Data
 
-### Unstructured Data
+- **Labelled data** has inputs plus the known outcome. Example: measurements with the final PASS/FAIL. It can train a *supervised* model.
+- **Unlabelled data** has inputs only. Example: measurements from many runs where nobody recorded the outcome. It may be used to find groups or unusual cases with *unsupervised* methods.
 
-Unstructured data does not follow a fixed tabular structure.
+Getting labels often takes extra effort (running full analysis, or an engineer reviewing results), which is one reason labelled data can be scarce.
 
-Examples: Images, audio recordings, free-text reports and many log files.
+## 5. Illustrative Dataset (8 rows, synthetic)
 
-### Numerical Features
-
-Numerical features contain measurable numbers.
-
-Examples: Delay in nanoseconds, power in milliwatts and cell area.
-
-### Categorical Features
-
-Categorical features represent groups or labels.
-
-Examples: Design type, operating mode and process corner.
-
-## 4. Labelled and Unlabelled Data
-
-### Labelled Data
-
-Labelled data contains input examples along with their known outcomes.
-
-Example: A dataset containing timing measurements and the corresponding PASS or FAIL result.
-
-It can be used to train a supervised learning model.
-
-### Unlabelled Data
-
-Unlabelled data contains input examples without known target answers.
-
-Example: Timing measurements from different design runs without their final timing status.
-
-Such data may be useful for finding groups or patterns using unsupervised learning.
-
-## 5. Illustrative Dataset
-
-The following is a synthetic dataset created for this assignment. The values are illustrative and are not taken from an actual chip-design project.
-
-| Run | Delay (ns) | Power (mW) | Design Type | Timing Result |
+| Run | Delay (ns) | Power (mW) | Design type | Timing result |
 |---|---:|---:|---|---|
 | R1 | 0.80 | 12.5 | Low complexity | PASS |
 | R2 | 1.20 | 14.0 | Medium complexity | FAIL |
@@ -74,93 +49,74 @@ The following is a synthetic dataset created for this assignment. The values are
 | R4 | 1.35 | 15.1 | High complexity | FAIL |
 | R5 | 0.75 | 11.8 | Medium complexity | PASS |
 | R6 | 1.10 | 14.5 | High complexity | FAIL |
+| R7 | 0.90 | 12.9 | Medium complexity | PASS |
+| R8 | 1.25 | 14.8 | High complexity | FAIL |
 
-### Identifying the Dataset Components
+**Identifying the parts**
 
-- **Dataset:** The complete table containing six design runs.
-- **Sample/observation:** Each row represents one recorded design run.
-- **Features:** Delay, power and design type.
-- **Target/label:** Timing Result (PASS or FAIL).
-- **Numerical features:** Delay and power.
-- **Categorical feature:** Design Type.
-- **Labelled data:** All six rows contain a known timing result.
+| Component | Answer |
+|---|---|
+| Dataset | The table of 8 design runs |
+| Sample / observation | Each row (R1 to R8) |
+| Features | Delay, power, design type |
+| Numerical features | Delay (ns), power (mW) |
+| Categorical feature | Design type (ordinal: Low < Medium < High) |
+| Label / target | Timing result (PASS or FAIL) |
+| Labelled? | Yes, all 8 rows have a known result |
 
-If we wanted to predict the timing result for a new run, we could use delay, power and design type as inputs and timing result as the target.
+**Task this could support:** given delay, power and design type for a *new* run, predict PASS or FAIL. That would be supervised learning, specifically classification.
 
-This small dataset is only for illustration. Six examples are not enough to establish that a model would perform reliably in a real project.
+**Honest limitation:** this is a toy table. Here FAIL happens to line up with higher delay, which makes the pattern look easy. Eight rows are nowhere near enough to trust a model, and real data is rarely this clean.
 
-## 6. Data Collection and Preparation
+## 6. Data Collection and Cleaning
 
-Before using data to train a model, we need to collect and prepare it properly.
+**Collection.** Data should come from sources relevant to the problem, such as simulation reports, timing-analysis output or a public dataset. It should also cover the range of situations where the model will be used.
 
-### Data Collection
+**Cleaning.** Raw data usually needs checking before training. Here is a small made-up example of what problems look like:
 
-Data can be collected from suitable sources, such as simulation reports, timing analysis tools or publicly available datasets.
+| Run | Delay (ns) | Power (mW) | Design type | Timing result | Problem |
+|---|---:|---:|---|---|---|
+| R9 | 1.05 | *(missing)* | High complexity | Pass | Missing value; label written "Pass" |
+| R10 | 0.88 | 12.7 | Low complexity | PASS | (fine) |
+| R11 | 1.18 | 14.2 | Medium complexity | FAIL | Appears twice (duplicate) |
+| R11 | 1.18 | 14.2 | Medium complexity | FAIL | Appears twice (duplicate) |
+| R12 | 9.5 | 13.0 | Low complexity | SUCCESS | Delay looks like a typo (0.95?); label is "SUCCESS" instead of "PASS" |
 
-The collected data should be relevant to the problem we want to solve.
+Common problems:
+- **Missing values:** some measurements are absent.
+- **Noisy data:** measurements contain random variation or measurement error.
+- **Inconsistent labels:** the same outcome is written in different ways (PASS, Pass, SUCCESS).
+- **Incorrect values:** a number is wrong because of a collection or processing error.
+- **Duplicates:** the same sample appears more than once and gets extra weight.
 
-### Data Cleaning
+Each should be investigated against the original reports before training, not just silently dropped or guessed.
 
-Data cleaning involves checking and correcting problems in the dataset before using it.
+## 7. Why More Data Does Not Guarantee Better Data
 
-Common issues include:
+Quantity says how *much* data there is. Quality says whether it is *correct, relevant, consistent and representative*.
 
-- **Missing values:** Some measurements or results are absent.
-- **Noisy data:** Measurements contain unwanted variations or errors.
-- **Inconsistent labels:** The same outcome is recorded using different labels, such as PASS, Pass and SUCCESS.
-- **Incorrect values:** A measurement is recorded incorrectly because of a collection or processing error.
+- 100,000 timing reports with wrong PASS/FAIL labels teach the model wrong answers, just at scale.
+- A huge dataset collected only from small, simple designs may say nothing useful about large, complex ones.
+- Duplicates inflate the size without adding new information.
 
-These problems should be investigated before training a model.
-
-## 7. Why More Data Does Not Always Mean Better Data
-
-A large dataset is not necessarily a good dataset.
-
-If a dataset contains incorrect measurements, repeated records, missing values or biased examples, the model may learn misleading patterns.
-
-For example, collecting thousands of timing reports with incorrect timing labels may cause a model to make unreliable predictions.
-
-It is important to have data that is accurate, relevant, sufficiently representative and consistently labelled, rather than focusing only on its size.
+A smaller, carefully checked dataset can be more useful than a larger messy one.
 
 ## 8. Two Ways Data Quality Can Affect a Model
 
-### 1. Missing or Incorrect Measurements
+**1. Wrong or inconsistent labels.** If a run that really failed timing is labelled PASS, the model is taught a false example. Repeated label errors blur the real pattern, so the model makes less reliable predictions. The evaluation can also look wrong, because the "correct answers" it is compared against are themselves wrong. *Check:* compare labels against the original timing reports and apply one consistent labelling rule.
 
-If delay or power values are missing or recorded incorrectly, the model may learn inaccurate relationships between the input features and the target.
+**2. Unrepresentative data.** If the training runs are mostly Low complexity designs, the model may learn patterns that only hold for those, and then perform poorly on High complexity runs it has rarely seen. *Check:* look at how the data is spread across design types and measure performance separately for each group.
 
-This can reduce prediction quality when the model is used on new design runs.
+(Missing or incorrect measurements, such as the typo in R12, are a third example: they distort the learned relationship between features and target.)
 
-**Possible solution:** Check the source reports, investigate missing values and correct confirmed errors before training.
+## 9. Connection to Design Verification
 
-### 2. Inconsistent or Incorrect Labels
-
-If a design run that failed timing is incorrectly labelled PASS, the model receives a wrong training example. Repeated label errors can confuse the learning process and reduce the reliability of predictions.
-
-**Possible solution:** Verify labels against the original timing reports and apply consistent labelling rules.
-
-## 9. Connection to VLSI Design Verification
-
-Data is important in Design Verification because simulation results, coverage reports and failure logs can contain useful information about a design.
-
-A dataset containing previous test results could potentially help identify patterns associated with failures or prioritise tests for further investigation.
-
-However, the data must be reliable and representative. An ML model cannot be expected to make dependable predictions if its training data contains serious errors or does not represent the conditions in which it will be used.
+Simulation results, coverage reports and failure logs are data that could in principle reveal patterns, such as which kinds of tests tend to find failures. For that to be dependable, the data must be accurate, consistently labelled and representative of the designs the model will be used on. This is a possible idea to investigate, not a claim about an existing tool.
 
 ## 10. Conclusion
 
-From this mission, I understood that an ML model learns patterns from the examples provided to it. Features are the inputs used for prediction, while labels or targets represent the outcomes the model learns to predict in supervised learning.
-
-I also learned that structured and unstructured data are different, and that missing values, noisy measurements and incorrect labels can affect model performance. Having more data is useful only when the data is also suitable for the problem.
+An ML model learns patterns from the examples it is given. Features are the inputs, and the label or target is the answer it learns to predict in supervised learning. Data can be structured or unstructured, labelled or unlabelled, and its features can be numerical or categorical. Missing values, noise, duplicates, wrong labels and unrepresentative samples all reduce model quality, and more data helps only if it is good data.
 
 ## 11. Sources
 
-1. Google for Developers — Introduction to Machine Learning:
-   https://developers.google.com/machine-learning/intro-to-ml
-
-2. Google for Developers — Machine Learning Crash Course:
-   https://developers.google.com/machine-learning/crash-course
-
-3. Google for Developers — Datasets:
-   https://developers.google.com/machine-learning/crash-course/overfitting/dividing-datasets
-
-These resources provide introductory information about machine learning, training data and datasets. The table in this assignment is synthetic and was created only to demonstrate the concepts.
+Full list with the claims each one supports is in [`sources.md`](sources.md) (Mission 2 section).
