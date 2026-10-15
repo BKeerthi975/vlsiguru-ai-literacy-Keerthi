@@ -1,0 +1,9 @@
+run,delay_ns,power_mw,design_type,timing_result
+R1,0.80,12.5,Low complexity,PASS
+R2,1.20,14.0,Medium complexity,FAIL
+R3,0.95,13.2,Low complexity,PASS
+R4,1.35,15.1,High complexity,FAIL
+R5,0.75,11.8,Medium complexity,PASS
+R6,1.10,14.5,High complexity,FAIL
+R7,0.90,12.9,Medium complexity,PASS
+R8,1.25,14.8,High complexity,FAIL
