@@ -111,4 +111,4 @@ An ML system can fail even when it tests well: the data may not represent real u
 
 ## 8. Sources
 
-Sources for this mission will be added to [`sources.md`](sources.md).
+Full list with the claims each one supports is in [`sources.md`](sources.md) (Mission 7 section).
