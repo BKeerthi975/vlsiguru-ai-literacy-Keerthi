@@ -135,4 +135,4 @@ An algorithm is the learning procedure, parameters are the values it learns, and
 
 ## 11. Sources
 
-Sources for this mission will be added to [`sources.md`](sources.md).
+Full list with the claims each one supports is in [`sources.md`](sources.md).
