@@ -132,4 +132,4 @@ A model must be judged on data it has not seen, using a training, validation and
 
 ## 11. Sources
 
-Sources for this mission will be added to [`sources.md`](sources.md).
+Full list with the claims each one supports is in [`sources.md`](sources.md) (Mission 6 section).
