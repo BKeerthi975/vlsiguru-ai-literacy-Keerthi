@@ -17,8 +17,8 @@ VLSIGuru AI Literacy Layer - Week 02 assignment.
 | Mission 7: Why ML systems fail | Done |
 | Mission 8: When to use ML | Done |
 | Mission 9: Semiconductor case study | Done |
-| ML Foundations lifecycle map (final synthesis) | Pending |
-| Reflection | Pending |
+| ML Foundations lifecycle map (final synthesis) | Done |
+| Reflection | Done |
 
 ## Missions at a glance
 
