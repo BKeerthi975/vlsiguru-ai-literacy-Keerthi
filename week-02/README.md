@@ -45,6 +45,9 @@ VLSIGuru AI Literacy Layer - Week 02 assignment.
 | [`accuracy_vs_recall.png`](accuracy_vs_recall.png) | Accuracy vs recall on an imbalanced example |
 | [`mission_02_dataset.csv`](mission_02_dataset.csv) | The synthetic dataset used in Mission 2 |
 | [`sources.md`](sources.md) | Every source, what each supports, and a claim map for each mission |
+| [`ml_lifecycle_map.md`](ml_lifecycle_map.md) | ML Foundations Map: 7-stage lifecycle with paradigms, task types, failures and a semiconductor application |
+| [`ml_lifecycle_map.png`](ml_lifecycle_map.png) | Image export of the lifecycle map |
+| [`reflection.md`](reflection.md) | Final reflection answers |
 
 ## Case study at a glance (Mission 9)
 
