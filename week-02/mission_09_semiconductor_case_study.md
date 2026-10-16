@@ -63,7 +63,7 @@ These come from the paper unless marked as my own reasoning.
 2. **One design.** Results are for a single block; they may not carry over to other designs.
 3. **Diminishing returns.** Beyond 99% coverage, the method was not significantly better than constrained random testing for this model, with roughly 60 coverage points left.
 4. **Coverage is only an approximation.** The authors note a coverage model is somewhat subjective and bugs can hide outside it, so hitting coverage faster does not prove the design is bug-free.
-5. **Trade-offs between models.** Non-tree models saved more tests but are less transparent to engineers and slower to train (the neural network took 5 days versus 1 day for a standard decision tree).
+5. **Trade-offs between models.** Naive Bayes and the neural network saved more tests than gradient boosting, while logistic regression saved fewer. The neural network is also less transparent to engineers and slower to train (5 days versus 1 day for a standard decision tree).
 6. **Overfitting.** Untuned decision trees gave inconsistent results, which the authors link to overfitting; limiting tree depth helped.
 7. **Noisy, imperfect separation** between positive and negative training data.
 8. *My own reasoning:* a model trained on one project's tests may need re-checking when the design or test setup changes (data drift, Mission 7), and its picks should still be reviewed by engineers.
