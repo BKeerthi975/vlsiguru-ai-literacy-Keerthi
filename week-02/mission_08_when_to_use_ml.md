@@ -126,4 +126,4 @@ Choosing ML should come from the problem, not from enthusiasm for the technology
 
 ## 11. Sources
 
-Sources for this mission will be added to [`sources.md`](sources.md).
+Full list with the claims each one supports is in [`sources.md`](sources.md) (Mission 8 section).
