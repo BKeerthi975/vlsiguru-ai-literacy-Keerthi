@@ -46,10 +46,6 @@ Each entry says which specific claims the source supports. Anything not listed h
 ### Own examples (not from a source)
 - The 8-row timing dataset, the "messy data" table (missing value, duplicate, typo, inconsistent labels), and the unrepresentative-data scenario are **synthetic and invented by me** to illustrate the concepts. They do not represent real chip-design measurements.
 
-## Verification note
-
-The synthetic datasets and every semiconductor/DV example are illustrative only. No claim is made that any of them is deployed in a real tool or flow.
-
 ## Mission 3: Learning Approaches
 
 ### Source 2 (reused)
@@ -132,6 +128,10 @@ The synthetic datasets and every semiconductor/DV example are illustrative only.
 - **Authors:** S. Fine, A. Ziv, DAC '03
 - **URL:** https://dl.acm.org/doi/10.1145/775832.775907
 - **Supports:** an earlier ML-based approach to coverage-directed test generation.
+
+## Verification note
+
+The synthetic datasets and every semiconductor/DV example are illustrative only. No claim is made that any of them is deployed in a real tool or flow.
 
 ### Own reasoning (not from a source)
 - Limitation 8 (re-checking the model when the design changes) is my own reasoning.
