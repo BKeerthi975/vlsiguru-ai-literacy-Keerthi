@@ -87,4 +87,4 @@ Coverage-directed test selection is a clear example of the ML foundations from t
 2. **Primary (earlier method):** S. Fine, A. Ziv, "Coverage directed test generation for functional verification using Bayesian networks," Proceedings of the 40th Design Automation Conference (DAC '03), 2003. https://dl.acm.org/doi/10.1145/775832.775907
 3. **Secondary (review):** "Coverage-Directed Test Generation Automated by Machine Learning - A Review." https://www.researchgate.net/publication/220306081_Coverage-Directed_Test_Generation_Automated_by_Machine_Learning_-_A_Review
 
-Claim-by-claim mapping will be in [`sources.md`](sources.md).
+Claim-by-claim mapping is in [`sources.md`](sources.md) (Mission 9 section).
