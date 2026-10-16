@@ -49,3 +49,89 @@ Each entry says which specific claims the source supports. Anything not listed h
 ## Verification note
 
 The synthetic datasets and every semiconductor/DV example are illustrative only. No claim is made that any of them is deployed in a real tool or flow.
+
+## Mission 3: Learning Approaches
+
+### Source 2 (reused)
+- Introduction to Machine Learning (Google for Developers), URL above.
+- **Supports:** the names and basic ideas of supervised, unsupervised and reinforcement learning.
+
+### Source 5
+- **Title:** What is machine learning?
+- **Publisher:** IBM
+- **URL:** https://www.ibm.com/think/topics/machine-learning
+- **Supports:** the overview of the major learning approaches, and the point that self-supervised learning is related to unsupervised learning but not identical in every context.
+
+### Own examples (not from a source)
+- All semiconductor examples for each approach are my own illustrations.
+
+## Mission 4: ML Task Types
+
+### Source 2 and Source 5 (reused)
+- **Supports:** the general ideas of classification and regression as prediction tasks, and the examples of clustering and anomaly detection.
+
+### Own examples (not from a source)
+- The 10 classified problems, their inputs and outputs, and the table of algorithms per task are my own summary. Names of algorithms are general knowledge, not tied to one checked source.
+
+## Mission 5: Anatomy of an ML Model
+
+### Source 4 (reused)
+- Machine Learning Crash Course (Google), URL above.
+- **Supports:** the Linear Regression module's idea of learning a relationship from examples, and loss as a measure of prediction error.
+
+### Own examples (not from a source)
+- The 6-row block size / power data and the fitted line are **synthetic**. The line was fitted with a least-squares fit in Python.
+
+## Mission 6: Evaluation and Generalisation
+
+### Source 4 (reused)
+- **Supports:** the roles of training, validation and test sets; overfitting and generalisation; and the Classification module's accuracy, precision and recall.
+
+### Source 6
+- **Title:** Overfitting (Machine Learning Crash Course)
+- **Publisher:** Google for Developers
+- **URL:** https://developers.google.com/machine-learning/crash-course/overfitting
+- **Supports:** the explanation of overfitting and why performance on unseen examples matters.
+
+### Own examples (not from a source)
+- The 1000-run imbalanced example, Models A and B, and the baseline calculations are **synthetic**.
+
+## Mission 7: Why ML Systems Fail
+
+### Source 7
+- **Title:** Production ML systems (Machine Learning Crash Course)
+- **Publisher:** Google for Developers
+- **URL:** https://developers.google.com/machine-learning/crash-course/production-ml-systems
+- **Supports:** monitoring, data leakage, changing data (drift) and the gap between test performance and real-world behaviour.
+
+### Source 4 (reused)
+- **Supports:** the fairness module's point that model performance can differ across subsets of data.
+
+### Own examples (not from a source)
+- The three failure scenarios and the subset-accuracy table are **hypothetical and invented** for learning.
+
+## Mission 8: When to Use ML
+
+### Source 3 (reused)
+- Introduction to Machine Learning Problem Framing (Google), URL above.
+- **Supports:** deciding whether ML is appropriate, defining the desired output and choosing success metrics before building a model.
+
+### Own examples (not from a source)
+- The failure-log classification problem, the rule table and the log lines are **synthetic**. My conclusion ("start with rules") is my own judgement.
+
+## Mission 9: Semiconductor Case Study
+
+### Source 8 (primary)
+- **Title:** Supervised Learning for Coverage-Directed Test Selection in Simulation-Based Verification
+- **Authors:** N. Masamba, K. Eder, T. Blackmore (University of Bristol, Infineon Technologies)
+- **URL:** https://arxiv.org/pdf/2205.08524
+- **Supports:** the problem description, the RSPU design and data (300 fields, about 200 coverage groups, about 6,000 coverage points, 86,000 tests), the compared classifiers, the results table and the stated limitations.
+
+### Source 9 (primary, earlier method)
+- **Title:** Coverage directed test generation for functional verification using Bayesian networks
+- **Authors:** S. Fine, A. Ziv, DAC '03
+- **URL:** https://dl.acm.org/doi/10.1145/775832.775907
+- **Supports:** an earlier ML-based approach to coverage-directed test generation.
+
+### Own reasoning (not from a source)
+- Limitation 8 (re-checking the model when the design changes) is my own reasoning.
