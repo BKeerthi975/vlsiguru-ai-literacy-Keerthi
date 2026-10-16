@@ -33,6 +33,7 @@ VLSIGuru AI Literacy Layer - Week 02 assignment.
 | 7 | [`mission_07_failure_modes.md`](mission_07_failure_modes.md) | Three hypothetical failures with cause, evidence and mitigation |
 | 8 | [`mission_08_when_to_use_ml.md`](mission_08_when_to_use_ml.md) | Rule-based vs ML comparison for the same problem |
 | 9 | [`mission_09_semiconductor_case_study.md`](mission_09_semiconductor_case_study.md) | Case study on ML test selection in design verification |
+
 **Final synthesis:** the full lifecycle is in [`ml_lifecycle_map.md`](ml_lifecycle_map.md), and my reflection is in [`reflection.md`](reflection.md).
 
 ## Files in this folder
