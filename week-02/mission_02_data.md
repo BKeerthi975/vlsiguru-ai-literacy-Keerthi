@@ -66,7 +66,7 @@ Getting labels often takes extra effort (running full analysis, or an engineer r
 
 **Task this could support:** given delay, power and design type for a *new* run, predict PASS or FAIL. That would be supervised learning, specifically classification.
 
-**Honest limitation:** this is a toy table. Here FAIL happens to line up with higher delay, which makes the pattern look easy. Eight rows are nowhere near enough to trust a model, and real data is rarely this clean.
+**Honest limitation:** this is a toy table. Here FAIL happens to line up with higher delay, which makes the pattern look easy. Eight rows are nowhere near enough to trust a model, and real data is rarely this clean.Also, delay is so closely tied to timing pass/fail that using it as a feature would be close to data leakage in a real project. This is only a toy table to show the vocabulary.
 
 ## 6. Data Collection and Cleaning
 
