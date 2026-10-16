@@ -105,4 +105,4 @@ Classification predicts categories, regression predicts numbers, clustering find
 
 ## 10. Sources
 
-Sources for this mission will be added to [`sources.md`](sources.md).
+Full list with the claims each one supports is in [`sources.md`](sources.md) (Mission 4 section).
