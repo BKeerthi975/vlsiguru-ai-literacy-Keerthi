@@ -11,7 +11,8 @@ This is my portfolio and engineering journal for the 16-week VLSIGuru AI Literac
 
 - [x] Week 01 - The AI Landscape: What AI Is and Is Not
 - [x] Week 02 - Machine Learning Foundations
-- [ ] Weeks 03-16 (added as each week is released)
+- [x] Week 03 - Practical AI Tools & Engineering Learning
+- [ ] Weeks 04-16 (added as each week is released)
 
 ## Skills I expect to build
 
@@ -21,6 +22,8 @@ This is my portfolio and engineering journal for the 16-week VLSIGuru AI Literac
 - Documenting experiments and evidence
 - Basic Python and GitHub workflow
 - Making responsible human-in-the-loop decisions about AI output
+- Using AI tools as learning assistants, with better prompts and verification
+- Investigating open-source VLSI tools from official documentation
 
 ## Week 1 artifacts
 
@@ -50,18 +53,27 @@ This is my portfolio and engineering journal for the 16-week VLSIGuru AI Literac
 - [Sources and claim mapping](week-02/sources.md)
 - [Reflection](week-02/reflection.md)
 
+## Week 3 artifacts - Practical AI Tools & Engineering Learning
+
+- [Week 3 overview](w03/README.md)
+- [AI tools exploration](w03/ai_tools_exploration.md) - ChatGPT vs Gemini comparison, prompt refinement, one verified claim
+- [Open-source VLSI tool investigation: Verilator](w03/vlsi_tool_investigation.md)
+- [Reflection](w03/reflection.md)
+
 ## Progress so far
 
 | Week | Theme | Status |
 |---|---|---|
 | 01 | The AI landscape, verification habits, first Python steps | Done |
 | 02 | Machine learning foundations: data, learning approaches, evaluation, failure modes | Done |
-| 03-16 | To be added as released | Upcoming |
+| 03 | Practical AI tools, prompting and verification, open-source VLSI tool (Verilator) | Done |
+| 04-16 | To be added as released | Upcoming |
 
 ## Notes on my approach
 
 - I use AI tools as a learning aid, then check technical claims against reliable sources.
 - Datasets and numerical examples in my work are synthetic or public, never confidential.
 - Where I describe a semiconductor application, I separate deployed tools, research demonstrations and my own proposals.
+- I do not upload confidential RTL, netlists or proprietary material to public AI services. Hands-on examples (such as the Week 3 Verilator counter) are small designs I wrote for the exercise.
 
 This repository is public and contains only my own, non-confidential work.
