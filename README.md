@@ -12,7 +12,8 @@ This is my portfolio and engineering journal for the 16-week VLSIGuru AI Literac
 - [x] Week 01 - The AI Landscape: What AI Is and Is Not
 - [x] Week 02 - Machine Learning Foundations
 - [x] Week 03 - Practical AI Tools & Engineering Learning
-- [ ] Weeks 04-16 (added as each week is released)
+- [x] Week 04 - Data & Deep Learning Foundations
+- [ ] Weeks 05-16 (added as each week is released)
 
 ## Skills I expect to build
 
@@ -24,6 +25,7 @@ This is my portfolio and engineering journal for the 16-week VLSIGuru AI Literac
 - Making responsible human-in-the-loop decisions about AI output
 - Using AI tools as learning assistants, with better prompts and verification
 - Investigating open-source VLSI tools from official documentation
+- Explaining how data preparation and neural-network training affect model behaviour
 
 ## Week 1 artifacts
 
@@ -60,6 +62,18 @@ This is my portfolio and engineering journal for the 16-week VLSIGuru AI Literac
 - [Open-source VLSI tool investigation: Verilator](w03/vlsi_tool_investigation.md)
 - [Reflection](w03/reflection.md)
 
+## Week 4 artifacts - Data & Deep Learning Foundations
+
+- [Week 4 overview](w04/README.md)
+- [Data behind deep learning](w04/data_behind_deep_learning.md)
+- [ML vs deep learning](w04/ml_vs_deep_learning.md)
+- [Neural network explained + diagram](w04/neural_network_explained.md)
+- [How neural networks learn](w04/how_neural_networks_learn.md)
+- [Playground experiment](w04/playground_experiment.md)
+- [Engineering case study: wafer-map defects](w04/engineering_case_study.md)
+- [Sources](w04/sources.md)
+- [Reflection](w04/reflection.md)
+
 ## Progress so far
 
 | Week | Theme | Status |
@@ -67,7 +81,8 @@ This is my portfolio and engineering journal for the 16-week VLSIGuru AI Literac
 | 01 | The AI landscape, verification habits, first Python steps | Done |
 | 02 | Machine learning foundations: data, learning approaches, evaluation, failure modes | Done |
 | 03 | Practical AI tools, prompting and verification, open-source VLSI tool (Verilator) | Done |
-| 04-16 | To be added as released | Upcoming |
+| 04 | Data and deep learning foundations: data preparation, neural networks, training, Playground experiment, wafer-map case study | Done |
+| 05-16 | To be added as released | Upcoming |
 
 ## Notes on my approach
 
